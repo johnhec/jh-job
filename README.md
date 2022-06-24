@@ -80,6 +80,12 @@ com.jh.job.core.controller.JobController
 ```
 这里需要说明的是：任务通过调度器调度后，会下发执行器执行，由于时间原因，这里直接集成了spring boot提供了web接口给调度器调用，这里更恰当的做法是使用netty等提供接口。
 
+执行器的集成
+com.jh.job.core.config.JobConfig是使用spring方式集成执行器的配置样例
+com.jh.job.core.example.TestJob是定义为JobHandler的样例
+
+其它系统通过上面两个配置就可以方便的集成执行器。
+
 # 运行和测试
 1、运行doc/db/jh_job.sql创建库和表以及插入部分测试数据
 
@@ -89,4 +95,4 @@ com.jh.job.core.controller.JobController
 
 4、调用启动任务接口(start接口，可以用id为1的任务)
 
-这样就可以在执行器端每一分钟输出一条"Test Job handler execute"记录（id为1的job配置的cron是1分钟执行一次）
+这样就可以在执行器端每一分钟输出一条"Test Job handler execute"记录（id为1的job配置的cron是1分钟执行一次，且jobHander是com.jh.job.core.example.TestJob里面的test jobHander）
