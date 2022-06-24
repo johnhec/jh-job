@@ -8,7 +8,7 @@ jh-job是一个分布式任务执行器，分为调度中心和执行器两部�
 
 整体架构如下图所示
 
-![jm-job架构](https://github.com/johnhe/jh-job/blob/master/jm-job%E6%9E%B6%E6%9E%84.png)
+![jm-job架构](https://github.com/johnhec/jh-job/blob/main/jh-job%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 注：因受限于时间，设计和代码都不太完善。
 
