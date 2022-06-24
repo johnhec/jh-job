@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jh.job.admin.dao.JobGroupDao">
+	
+	<resultMap id="JobGroup" type="com.jh.job.admin.model.JobGroup" >
+		<result column="id" property="id" />
+	    <result column="name" property="name" />
+		<result column="address_list" property="addressList" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		t.id,
+		t.name,
+		t.address_list
+	</sql>
+
+	<insert id="save" parameterType="com.jh.job.admin.model.JobGroup" useGeneratedKeys="true" keyProperty="id" >
+		INSERT INTO job_group ( `name`, `address_list`)
+		values ( #{name}, #{addressList} );
+	</insert>
+
+	<select id="load" parameterType="java.lang.Integer" resultMap="JobGroup">
+		SELECT <include refid="Base_Column_List" />
+		FROM job_group AS t
+		WHERE t.id = #{id}
+	</select>
+
+</mapper>
