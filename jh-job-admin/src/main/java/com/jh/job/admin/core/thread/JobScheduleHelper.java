@@ -25,14 +25,11 @@ public class JobScheduleHelper {
         scheduleThread = new Thread(new Runnable() {
             @Override
             public void run() {
-
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(5000 - System.currentTimeMillis()%1000 );
-//                } catch (InterruptedException e) {
-//                    if (!scheduleThreadToStop) {
-//                        logger.error(e.getMessage(), e);
-//                    }
-//                }
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 while (!scheduleThreadToStop) {
                     try {
