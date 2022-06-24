@@ -89,4 +89,4 @@ com.jh.job.core.controller.JobController
 
 4、调用启动任务接口(start接口，可以用id为1的任务)
 
-这样就可以再执行器端每一分钟输出一条"Test Job handler execute"记录
+这样就可以在执行器端每一分钟输出一条"Test Job handler execute"记录（id为1的job配置的cron是1分钟执行一次）
