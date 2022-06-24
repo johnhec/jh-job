@@ -34,7 +34,7 @@ jh-job是一个简易分布式任务执行器，分为调度中心和执行器�
 | trigger_last_time | 上次调度时间 | bigint      | not null |
 | trigger_next_time | 下次调度时间     | bigint   | not null        |
 
-# 调度中心
+# jh-job-admin 调度中心
 
 执行器管理相关接口
 com.jh.job.admin.controller.JobGroupController
@@ -71,7 +71,7 @@ com.jh.job.admin.controller.JobInfoController
     public ReturnT<String> pause(int id);
 ```
 
-# 执行器
+# jh-job-core 执行器
 任务执行相关接口
 com.jh.job.core.controller.JobController
 
@@ -87,6 +87,6 @@ com.jh.job.core.controller.JobController
 
 3、启动ClientAdminApplication
 
-4、启动任务(可以使用数据库存在的id为1的任务)
+4、调用启动任务接口(start接口，可以用id为1的任务)
 
 这样就可以再执行器端每一分钟输出一条"Test Job handler execute"记录
