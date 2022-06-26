@@ -37,6 +37,7 @@ jh-job是一个简易分布式任务执行器，分为调度中心和执行器�
 # jh-job-admin 调度中心
 
 执行器管理相关接口
+
 com.jh.job.admin.controller.JobGroupController
 
 ```java
@@ -47,6 +48,7 @@ com.jh.job.admin.controller.JobGroupController
     public ReturnT<JobGroup> loadById(int id);
 ```
 任务管理相关接口
+
 com.jh.job.admin.controller.JobInfoController
 ```java
     // 创建任务
@@ -73,6 +75,7 @@ com.jh.job.admin.controller.JobInfoController
 
 # jh-job-core 执行器
 任务执行相关接口
+
 com.jh.job.core.controller.JobController
 
 ```java
@@ -81,8 +84,17 @@ com.jh.job.core.controller.JobController
 这里需要说明的是：任务通过调度器调度后，会下发执行器执行，由于时间原因，这里直接集成了spring boot提供了web接口给调度器调用，这里更恰当的做法是使用netty等提供接口。
 
 执行器的集成
-com.jh.job.core.config.JobConfig是使用spring方式集成执行器的配置样例
-com.jh.job.core.example.TestJob是定义为JobHandler的样例
+
+使用spring方式集成执行器的配置样例参考
+
+```java
+    com.jh.job.core.config.JobConfig
+```
+JobHandler的测试样例
+
+```java
+    com.jh.job.core.example.TestJob
+```
 
 其它系统通过上面两个配置就可以方便的集成执行器。
 
